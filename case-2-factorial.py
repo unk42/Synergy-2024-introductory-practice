@@ -1,5 +1,9 @@
 import math
 
+# Простое вычисление факториала положительных целых чисел.
+
+'''Функция, отвечающая за получение от пользователя ввода числа
+и проверяющая его корректность.'''
 def get_positive_integer():
     while True:
         try:
@@ -11,13 +15,16 @@ def get_positive_integer():
         except ValueError:
             print("Ошибка: Введите целое число.")
 
+# Непосредственное вычисление факториала
 def calculate_factorial(n):
     return math.factorial(n)
 
+# Основное тело программы
 def main():
     num = get_positive_integer()
     factorial = calculate_factorial(num)
     print(f"Факториал числа {num} равен {factorial}")
 
+# Запуск основного тела программы
 if __name__ == "__main__":
     main()
