@@ -1,21 +1,21 @@
 import random
+import time
 
-
-# Основное тело программы.
 def play_game():
-    number_to_guess = random.randint(1, 100)    # Определение диапазона чисел от начального до конечного.
-    attempts = 10 # Число попыток
-    print("Добро пожаловать в игру 'Угадай число'!")
-    print(f"Я загадал число от 1 до 100. У вас есть {attempts} попыток, чтобы угадать.")
+    print('Я загадаю число от одного до... "Введите предельно возможное число:"')
+    diapazon = int(input())
+    number_to_guess = random.randint(1, diapazon)
+    attempts = 10
+    print(f"Я загадал число от 1 до {diapazon}. У вас есть {attempts} попыток, чтобы угадать.")
 
     while attempts > 0:
         guess = input("Введите вашу догадку: ")
 
-        if not guess.isdigit():    # Если были введены некорректные данные.
+        if not guess.isdigit():
             print("Пожалуйста, введите целое число.")
             continue
 
-        guess = int(guess)     # Преобразование введённых данных в целочисленный тип.
+        guess = int(guess)
 
         if guess < number_to_guess:
             print("Слишком маленькое число. Попробуйте еще раз.")
@@ -36,5 +36,9 @@ def play_game():
         play_game()
     else:
         print("Спасибо за игру! До свидания.")
+
+print("Добро пожаловать в игру 'Угадай число'!")
+
+time.sleep(2)
 
 play_game()
